@@ -1,15 +1,15 @@
-import { createStore, applyMiddleware } from 'redux'
-import promiseMiddleware from 'redux-promise'
-import rootReducer from './reducers'
-import { createLogger } from 'redux-logger'
+import { createStore, applyMiddleware } from 'redux';
+import { createLogger } from 'redux-logger';
+import promiseMiddleware from 'redux-promise';
+import rootReducer from './reducers';
 
-const middlewares = [promiseMiddleware]
+const middlewares = [promiseMiddleware];
 middlewares.push(createLogger({
   collapsed: true,
-  diff: true
-}))
+  diff: true,
+}));
 
 export default function configStore () {
-  const store = createStore(rootReducer, applyMiddleware(...middlewares))
-  return store
-};
+  const store = createStore(rootReducer, applyMiddleware(...middlewares));
+  return store;
+}

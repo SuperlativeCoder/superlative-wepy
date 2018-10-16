@@ -1,7 +1,7 @@
 module.exports = {
   root: true,
   parser: "babel-eslint",
-  extends: "airbnb",
+  extends: "airbnb-base",
   parserOptions: {
     sourceType: "module"
   },
@@ -9,10 +9,9 @@ module.exports = {
     browser: true
   },
   // https://github.com/feross/standard/blob/master/RULES.md#javascript-standard-style
-  extends: "standard",
   // required to lint *.wpy files
   plugins: [
-    "html"
+    "html",
   ],
   settings: {
     "html/html-extensions": [".html", ".wpy"]
@@ -32,5 +31,6 @@ module.exports = {
     "no-param-reassign": 0,
     "generator-star-spacing": 0,
     "no-console": 0,
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": false, "optionalDependencies": false, "peerDependencies": false}]
   }
 }
