@@ -30,6 +30,7 @@ export default class extends wepy.app {
   constructor () {
     super();
     this.use('requestfix');
+    console.log(this.use, __ENV__, global)
   }
 
   onLaunch() {

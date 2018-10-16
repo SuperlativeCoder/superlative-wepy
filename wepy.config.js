@@ -35,6 +35,9 @@ module.exports = {
         'transform-decorators-legacy',
         'transform-object-rest-spread',
         'transform-export-extensions',
+        ['global-define', {
+          __ENV__: process.env.NODE_ENV,
+        }],
       ],
     },
   },
