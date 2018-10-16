@@ -5,6 +5,7 @@ const prod = process.env.NODE_ENV === 'production';
 module.exports = {
   wpyExt: '.wpy',
   eslint: true,
+  target: prod ? 'dist_release' : 'dist',
   cliLogs: !prod,
   build: {
     web: {
