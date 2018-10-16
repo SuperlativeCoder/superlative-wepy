@@ -1,0 +1,10 @@
+$test: column;
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: $test;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
