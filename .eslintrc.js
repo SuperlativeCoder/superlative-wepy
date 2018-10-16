@@ -31,6 +31,7 @@ module.exports = {
     "no-param-reassign": 0,
     "generator-star-spacing": 0,
     "no-console": 0,
-    "import/no-extraneous-dependencies": ["error", {"devDependencies": false, "optionalDependencies": false, "peerDependencies": false}]
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": false, "optionalDependencies": false, "peerDependencies": false}],
+    "class-methods-use-this": 0,
   }
 }
