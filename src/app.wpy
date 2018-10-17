@@ -13,6 +13,7 @@ setStore(store);
 export default class extends wepy.app {
   config = {
     pages: [
+      'pages/demo/index',
       'pages/index/index',
     ],
     window: {
@@ -20,7 +21,11 @@ export default class extends wepy.app {
       navigationBarBackgroundColor: '#fff',
       navigationBarTitleText: 'WeChat',
       navigationBarTextStyle: 'black',
+      navigationStyle: 'custom',
     },
+    networkTimeout: {
+      request: 15000,
+    }
   }
 
   globalData = {
