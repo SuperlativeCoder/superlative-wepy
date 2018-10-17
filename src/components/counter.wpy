@@ -40,7 +40,15 @@
       return state.counter.asyncNum
     }
   }, {
-    incNum: INCREMENT,
+    incNum() {
+      console.log(arguments, 'arguments')
+      return {
+        type: INCREMENT,
+        // 修正一般情况下的参数 一般支持只传一个参数
+        // 如果真的是多个参数的话 那么 payload 就是参数组成的数组
+        payload: 3
+      }
+    },
     decNum: DECREMENT,
     asyncInc
   })

@@ -2404,6 +2404,10 @@ imagemin@^5.2.2:
     pify "^2.3.0"
     replace-ext "^1.0.0"
 
+immer@^1.2.1:
+  version "1.7.2"
+  resolved "https://registry.npmjs.org/immer/-/immer-1.7.2.tgz#a51e9723c50b27e132f6566facbec1c85fc69547"
+
 imurmurhash@^0.1.4:
   version "0.1.4"
   resolved "http://10.0.58.159:4873/imurmurhash/-/imurmurhash-0.1.4.tgz#9218b9b2b928a238b13dc4fb6b6d576f231453ea"
@@ -3681,7 +3685,7 @@ reduce-reducers@^0.1.0:
   version "0.1.5"
   resolved "http://10.0.58.159:4873/reduce-reducers/-/reduce-reducers-0.1.5.tgz#ff77ca8068ff41007319b8b4b91533c7e0e54576"
 
-redux-actions@^2.2.1:
+redux-actions@^2.2.1, redux-actions@^2.3.0:
   version "2.6.1"
   resolved "http://10.0.58.159:4873/redux-actions/-/redux-actions-2.6.1.tgz#42c06e94739fbe6db35db3605abb105bdb3724d8"
   dependencies:
@@ -4505,6 +4509,14 @@ ware@^1.2.0:
   resolved "https://registry.npmjs.org/ware/-/ware-1.3.0.tgz#d1b14f39d2e2cb4ab8c4098f756fe4b164e473d4"
   dependencies:
     wrap-fn "^0.1.0"
+
+weappx@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.npmjs.org/weappx/-/weappx-2.0.0.tgz#b6310e29e332ab1a2aec11fbb558de58dd01848b"
+  dependencies:
+    immer "^1.2.1"
+    redux "^3.7.2"
+    redux-actions "^2.3.0"
 
 wepy-async-function@^1.4.4:
   version "1.4.6"

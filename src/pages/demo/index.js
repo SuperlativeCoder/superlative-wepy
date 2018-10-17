@@ -11,6 +11,23 @@ import NavigationNavBar from '@/components/NavigationNavBar/index'
 
 console.log('moduleA ignored: ', moduleA) // => moduleA ignored: {}
 
+// function matStateToProps(state) {
+//   const { counter } = state;
+//   return {
+//     num (state) {
+//       return state.counter.num
+//     },
+//     asyncNum (state) {
+//       return state.counter.asyncNum
+//     },
+//     sumNum (state) {
+//       return state.counter.num + state.counter.asyncNum
+//     }
+//   }
+// }
+
+// @connect(matStateToProps)
+
 @connect({
   num (state) {
     return state.counter.num
@@ -97,7 +114,10 @@ export default class Index extends wepy.page {
   computed = {
     now () {
       return +new Date()
-    }
+    },
+    // sumNum () {
+    //   return this.num + this.asyncNum
+    // }
   }
 
   methods = {
