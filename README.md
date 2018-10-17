@@ -62,6 +62,8 @@ customFileTypes:
   ]
 ```
 
+3. 对于页面中不识别的其他文件, 如`.wxml`后缀文件, 我们将页面自动识别的`plain text`, 改为`vue component`即可实现代码高亮
+
 ### VS Code
 
 1. 在 Code 里先安装 Vue 的语法高亮插件 Vetur。
@@ -74,7 +76,7 @@ customFileTypes:
 
 5. 在选择要与 .wpy 关联的语言模式 中选择 Vue。
 
-6. 在VS Code编辑器设置中设置。 //文件-首选项-设置-settings.json settings.json "files.associations": { "*.wpy": "vue" }
+6. 对于页面中不识别的其他文件, 如`.wxml`后缀文件, 我们将页面自动识别的`纯文本`, 改为`vue-html`即可实现代码高亮
 
 ### 代码规范
 

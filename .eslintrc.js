@@ -33,5 +33,6 @@ module.exports = {
     "no-console": 0,
     "import/no-extraneous-dependencies": ["error", {"devDependencies": false, "optionalDependencies": false, "peerDependencies": false}],
     "class-methods-use-this": 0,
+    "dot-notation": 0,
   }
 }
