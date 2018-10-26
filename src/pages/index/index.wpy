@@ -99,6 +99,9 @@
     }
 
     methods = {
+      parentFn (num, evt) {
+        console.log('parent received emit event, number is: ' + num)
+      },
       plus () {
         this.mynum++
       },
@@ -118,6 +121,7 @@
       communicate () {
         console.log(this.$name + ' tap')
 
+        this.$invoke('counter2', 'test-invoke', 45, 6)
         this.$invoke('counter2', 'minus', 45, 6)
         this.$invoke('counter1', 'plus', 45, 6)
 

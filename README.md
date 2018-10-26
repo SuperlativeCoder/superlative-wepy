@@ -80,15 +80,13 @@ customFileTypes:
 
 ### 代码规范
 
-1. 开发严格遵循`airbnb`编码规范, 未遵循将在控制台中报错
+1. 开发严格遵循`airbnb`编码规范, 未遵循将在控制台中报错, 因此我们将结构/样式/行为, 拆分成了三个文件, 并由`.wpy`文件进行整合, 便于进行code maintenance
 
-2. 变量与方法尽量使用驼峰式命名，并且注意避免使用$开头。 以$开头的标识符为WePY框架的内建属性和方法，可在JavaScript脚本中以this.的方式直接使用。
+2. 变量与方法使用驼峰式命名，并且避免使用$开头。 以$开头的标识符为WePY框架的内建属性和方法，可在JavaScript脚本中以this.的方式直接使用。
 
-3. 小程序入口、页面、组件文件名的后缀为`.wpy`；
+3. 使用`Promise`。 框架默认对小程序提供的API全都进行了`Promise`处理，甚至可以直接使用`async`/`await`等新特性进行开发。代码开发可使用最新的ES语法进行开发, 并对原有的callback函数进行了`promisify`, 同样的, 我们可以直接使用`acync/await`等`ES7`特性进行开发
 
-4. 使用`Promise`。 框架默认对小程序提供的API全都进行了`Promise`处理，甚至可以直接使用`async`/`await`等新特性进行开发。
-
-5. 事件绑定语法使用优化语法代替。
+4. 事件绑定语法使用优化语法代替。
 
 - 原`bindtap="click"`替换为`@tap="click"`，原`catchtap="click"`替换为`@tap.stop="click"`。
 - 原`capture-bind:tap="click"`替换为`@tap.capture="click"`，原`capture-catch:tap="click"`替换为`@tap.capture.stop="click"`。

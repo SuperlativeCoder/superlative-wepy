@@ -41,11 +41,17 @@
     methods = {
       tap () {
         // this.num = this.num + 1
-        console.log(this.$name + ' tap')
+        console.log(this.$name + ' tap111')
+        this.$invoke('./counter', 'test-invoke', 'i am test onvoke')
+
+        this.$emit('index-emit', '1111')
+        console.log('9999999')
       },
       add () {
+        console.log(88888)
         let len = this.list.length
         this.list.push({id: len + 1, title: 'title_' + len})
+        this.$invoke('../counter', 'test-invoke', 'i am test onvoke')
       }
     }
 
