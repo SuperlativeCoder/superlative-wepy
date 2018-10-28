@@ -5,7 +5,7 @@ import api from '../middlewares/api';
 
 const middlewares = [api, promiseMiddleware];
 
-if (global['__ENV__'] === 'development') {
+if (__ENV__ === 'development') {
   middlewares.push(require('redux-logger').createLogger({
     collapsed: true,
     diff: true,

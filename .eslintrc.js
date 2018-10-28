@@ -5,6 +5,11 @@ module.exports = {
   parserOptions: {
     sourceType: "module"
   },
+  "globals": {
+    "__ENV__": false,
+    "wx": false,
+    "wepy": false,
+  },
   env: {
     browser: true
   },

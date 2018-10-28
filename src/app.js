@@ -38,7 +38,7 @@ export default class extends wepy.app {
     // 使之支持promise
     this.use('promisify');
     // 通过babel-plugin-global-define向页面注入环境变量
-    console.log(global['__ENV__'], global);
+    console.log(__ENV__, global);
   }
   // 生命周期改异步写法
   async onShow() {

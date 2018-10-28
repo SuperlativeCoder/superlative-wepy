@@ -1,5 +1,3 @@
-
-// import wepy from 'wepy';
 import { STATUS_REQUEST, STATUS_SUCCESS, STATUS_FAILURE } from '../constants/actionTypes';
 import { CALL_API } from '../constants/symbols';
 
@@ -42,7 +40,6 @@ export default (store) => (next) => (action) => {
     header,
     method,
     success(res) {
-      console.log(res.data, type, '11111111')
       if (type) {
         next(actionWith({
           type: `${type}_${STATUS_SUCCESS}`,
@@ -77,5 +74,5 @@ export default (store) => (next) => (action) => {
     }));
   }
 
-  wx.request(requestOptions);
+  return wx.request(requestOptions);
 };
