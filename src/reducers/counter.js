@@ -1,9 +1,19 @@
 import { handleActions } from 'redux-actions';
-import { INCREMENT, DECREMENT, ASYNC_INCREMENT, TEST } from '../constants/counter';
+import {
+  INCREMENT,
+  DECREMENT,
+  ASYNC_INCREMENT,
+  TEST,
+} from '../constants';
+
+import {
+  request,
+  success,
+  failure,
+} from '../constants/actionTypes';
 
 export default handleActions({
   [INCREMENT] (state, action) {
-    console.log(state, 'state', arguments)
     return {
       ...state,
       num: state.num + action.payload,
@@ -21,13 +31,12 @@ export default handleActions({
       asyncNum: state.asyncNum + action.payload,
     };
   },
-  [TEST] (state, action) {
+  [success(TEST)] (state, action) {
     console.log(state, action, '11111')
-    console.log('state', state)
-    console.log('after state', state)
     return {
       ...state,
       asyncNum: state.asyncNum + action.payload,
+      testData: action.payload,
     }
   }
 }, {
