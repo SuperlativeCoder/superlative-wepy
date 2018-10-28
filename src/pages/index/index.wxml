@@ -48,8 +48,8 @@
 
   <panel>
     <view class="title" slot="title">测试组件Repeat</view>
-    <repeat for="" index="index" item="item" key="key">
-      <group :grouplist="item" :indexa="index"></group>
+    <repeat for="grouplist" index="index" item="item" key="key">
+      <group :grouplist="item" :index="index"></group>
     </repeat>
   </panel>
 
@@ -57,6 +57,6 @@
     <view class="title" slot="title">测试列表</view>
     <list></list>
   </panel>
-
+  <button @tap="onNavigateBack">点击返回</button>
   <toast />
 </view>

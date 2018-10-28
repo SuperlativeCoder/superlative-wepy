@@ -1,0 +1,15 @@
+// @import '../../public/app';
+@import '../../public/styles/index';
+.container {
+  width: 100%;
+  .title {
+    // font-size: $font-t2;
+    color: $color-z2;
+    display: flex;
+    // flex-direction: $test;
+  }
+
+  .num-title {
+    color: green;
+  }
+}

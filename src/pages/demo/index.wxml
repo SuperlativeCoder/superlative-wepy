@@ -1,3 +1,15 @@
 <view class="container">
-  1111
+  <view>123123</view>
+  <view>123123</view>
+  <view>123123</view>
+  <view class="title">123123</view>
+  <panel>
+    <view class="title" slot="title">测试标题</view>
+    <view class="test-content">
+      <view class="test-wrappr">123123123123123123</view>
+    </view>
+  </panel>
+  <view class="num-title">{{num}}</view>
+  <button @tap="incNum">点我➕</button>
+  <button @tap="toIndexPage">点我去主页</button>
 </view>

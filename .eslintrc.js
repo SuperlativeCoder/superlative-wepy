@@ -34,5 +34,6 @@ module.exports = {
     "import/no-extraneous-dependencies": ["error", {"devDependencies": false, "optionalDependencies": false, "peerDependencies": false}],
     "class-methods-use-this": 0,
     "dot-notation": 0,
+    "import/no-unresolved": 0,
   }
 }

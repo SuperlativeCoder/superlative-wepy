@@ -24,7 +24,7 @@ module.exports = {
   },
   compilers: {
     sass: {
-      outputStyle: 'compressed',
+      outputStyle: 'expanded',
     },
     babel: {
       sourceMap: !prod,

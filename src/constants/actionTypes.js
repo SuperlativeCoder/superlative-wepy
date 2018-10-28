@@ -1,5 +1,9 @@
+import counter from './counter';
+
+export const STATUS_REQUEST = 'REQUEST';
+export const STATUS_SUCCESS = 'SUCCESS';
+export const STATUS_FAILURE = 'FAILURE';
+
 export default {
-  TEST_REQUEST: Symbol('TEST_REQUEST'),
-  TEST_SUCCESS: Symbol('TEST_SUCCESS'),
-  TEST_FAILURE: Symbol('TEST_FAILURE'),
+  ...counter,
 };

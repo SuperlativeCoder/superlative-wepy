@@ -1,14 +1,14 @@
-@import './public/styles/index.scss';
+@import './public/styles/index';
 
 $test: column;
 
 .container {
   align-items: center;
   box-sizing: border-box;
+  color: $color-z1;
   display: flex;
   flex-direction: $test;
-  height: 100%;
   font-size: $font-t1;
-  color: $color-z1;
+  height: 100%;
   justify-content: space-between;
 }

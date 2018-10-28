@@ -2,3 +2,12 @@ export const INCREMENT = 'INCREMENT';
 export const DECREMENT = 'DECREMENT';
 
 export const ASYNC_INCREMENT = 'ASYNC_INCREMENT';
+
+export const TEST = 'TEST';
+
+export default {
+  INCREMENT: 'INCREMENT',
+  DECREMENT: 'DECREMENT',
+  ASYNC_INCREMENT: 'ASYNC_INCREMENT',
+  TEST: 'TEST',
+};

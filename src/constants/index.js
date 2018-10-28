@@ -1,1 +1,3 @@
-export * from './counter';
+export * from './actionTypes';
+
+export * from './host';

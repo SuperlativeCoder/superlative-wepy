@@ -99,6 +99,9 @@
     }
 
     methods = {
+      onNavigateBack() {
+        wepy.navigateBack();
+      },
       parentFn (num, evt) {
         console.log('parent received emit event, number is: ' + num)
       },
@@ -170,6 +173,9 @@
 
         self.$apply()
       })
+
+      console.log(this.asyncInc)
+      console.log('onLoad');
     }
   }
 </script>

@@ -3706,6 +3706,10 @@ redux-promise@^0.5.3:
   dependencies:
     flux-standard-action "^0.6.1"
 
+redux-thunk@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.npmjs.org/redux-thunk/-/redux-thunk-2.3.0.tgz#51c2c19a185ed5187aaa9a2d08b666d0d6467622"
+
 "redux@^2.0.0 || ^3.0.0", redux@^3.7.2:
   version "3.7.2"
   resolved "http://10.0.58.159:4873/redux/-/redux-3.7.2.tgz#06b73123215901d25d065be342eb026bc1c8537b"
