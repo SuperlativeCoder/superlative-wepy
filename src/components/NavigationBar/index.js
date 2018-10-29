@@ -1,50 +1,52 @@
 import wepy from 'wepy';
-import moduleA from 'module-a' // aliasFields ignore module example
-
-console.log('moduleA ignored: ', moduleA) // => moduleA ignored: {}
 
 export default class NavigationNavBar extends wepy.component {
   props = {
-    back: { //是否显示返回
+    // 是否显示返回
+    back: {
       type: Boolean,
-      default: false
+      default: false,
     },
-    background: { //导航栏背景色
+    // 导航栏背景色
+    background: {
       type: String,
-      default: '#ffffff', //默认
+      default: '#ffffff',
     },
-    placeholderBg: { //导航栏占位栏背景色
+    // 导航栏占位栏背景色
+    placeholderBg: {
       type: String,
-      default: 'transparent', //默认
+      default: 'transparent',
     },
-    color: { //导航栏字体色
+    // 导航栏字体色
+    color: {
       type: String,
-      default: '#000000', //默认
+      default: '#000000',
     },
-    fontSize: { //导航栏字大小
+    // 导航栏字大小
+    fontSize: {
       type: String,
-      default: '40rpx', //默认
+      default: '40rpx',
     },
-    title: { //导航栏标题
+    // 导航栏标题
+    title: {
       type: String,
-      default: 'none', //默认
+      default: 'none',
     },
-    fixed: { //导航栏是否fixed定位
+    // 导航栏是否fixed定位
+    fixed: {
       type: Boolean,
-      default: true, //默认
-    }
+      default: true,
+    },
   }
   data = {
-    // 这里是一些组件内部数据
-    height: 44, //导航栏高度,
-    paddingTop: 20, //导航栏上内边距对应状态栏高度
-    showHomeButton: false, //是否显示返回首页
-    show: true, //是否显示导航栏
+    height: 44,
+    paddingTop: 20,
+    showHomeButton: false,
+    show: true,
   }
   // onReady() {   console.log(2222) } onShow() {   console.log(3333) }
   onLoad() {
     console.log(333, this)
-    console.log(11111)
     //检测首页是否在当前页面栈中
     let pages = getCurrentPages();
     let showHomeButton = false;
@@ -110,7 +112,7 @@ export default class NavigationNavBar extends wepy.component {
           url: '/' + __wxConfig.pages[0]
         })
       } else {
-        wx.navigateBack({delta: 1});
+        wx.navigateBack();
       }
     },
     navigateBackHome() {

@@ -1,6 +1,7 @@
 import wepy from 'wepy';
 import { connect } from 'wepy-redux';
 
+import NavigationBar from 'components/NavigationBar/index';
 import Panel from './components/Panel/index';
 import List from './components/List/index';
 import Counter from './components/Counter/index';
@@ -9,7 +10,6 @@ import { requestTest } from '../../actions';
 
 @connect({
   num (state) {
-    console.log(state, 'state');
     return state.counter.num;
   },
 }, {
@@ -32,6 +32,7 @@ export default class Index extends wepy.page {
     counter1: Counter,
     counter2: Counter,
     list: List,
+    'navigation-bar': NavigationBar,
   }
 
   data = {

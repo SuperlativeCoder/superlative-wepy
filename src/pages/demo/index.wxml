@@ -1,4 +1,5 @@
 <view class="container">
+  <navigation-bar></navigation-bar>
   <view>123123</view>
   <view>123123</view>
   <view>123123</view>

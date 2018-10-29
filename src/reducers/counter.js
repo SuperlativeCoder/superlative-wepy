@@ -36,8 +36,8 @@ export default handleActions({
       ...state,
       asyncNum: state.asyncNum,
       testData: action.payload,
-    }
-  }
+    };
+  },
 }, {
   num: 0,
   asyncNum: 0,
