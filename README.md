@@ -1,3 +1,4 @@
+# 
 
 本项目使用腾讯wepy作为小程序开发基础框架, 并基于此框架进行了业务的深度定制
 
@@ -11,14 +12,35 @@
 ├── dist                   小程序运行代码目录（该目录由WePY的build指令自动编译生成，请不要直接修改该目录下的文件）
 ├── node_modules           
 ├── src                    代码编写的目录（该目录为使用WePY后的开发目录）
+|   ├── actions            页面/组件Action目录
 |   ├── components         WePY组件目录（组件不属于完整页面，仅供完整页面或其他组件引用）
-|   |   ├── com_a.wpy      可复用的WePY组件a
-|   |   └── com_b.wpy      可复用的WePY组件b
+|   |   ├── ComponentA     可复用的WePY组件A
+|   |   |   ├── index.js   WePY组件A的行为
+|   |   |   ├── index.scss WePY组件A的样式
+|   |   |   ├── index.wpy  整合其他三个文件内容至WePY组件A
+|   |   |   └── index.wxml WePY组件A的页面结构
+|   |   └── ComponentB     可复用的WePY组件A
+|   ├── constants          WePY常量目录, 常量已全部同步至该目录下index文件, 可直接引入constants来取得
+|   ├── middlewares        WePY的redux中间件目录
+|   ├── mixins             WePY的mixin目录, 用于抽取公共的js内容
 |   ├── pages              WePY页面目录（属于完整页面）
-|   |   ├── index.wpy      index页面（经build后，会在dist目录下的pages目录生成index.js、index.json、index.wxml和index.wxss文件）
-|   |   └── other.wpy      other页面（经build后，会在dist目录下的pages目录生成other.js、other.json、other.wxml和other.wxss文件）
+|   |   ├── PageA          页面A
+|   |   |   ├── index.js   页面A的行为
+|   |   |   ├── index.scss 页面A的样式
+|   |   |   ├── index.wpy  整合其他三个文件内容至页面A（经build后，会在dist目录下的pages目录生成index.js、index.json、index.wxml和index.wxss文件）
+|   |   |   └── index.wxml 页面A的页面结构
+|   |   └── PageB          页面B
+|   ├── public             WePY的静态资源目录
+|   |   ├── images         所有的图片静态资源
+|   |   └── styles         存储sass全局样式变量
+|   ├── reducers           页面reducer目录
+|   ├── store              页面redux初始化, 中间件配置
+|   ├── utils              页面公共方法
+|   ├── app.js             小程序配置项（行为）
+|   ├── app.wxss           小程序配置项（全局样式）
 |   └── app.wpy            小程序配置项（全局数据、样式、声明钩子等；经build后，会在dist目录下生成app.js、app.json和app.wxss文件）
-└── package.json           项目的package配置
+├── package.json           项目的package配置
+└── wepy.config.js         项目的打包等配置, 类似于webpack配置
 ```
 
 ## 项目启动(小程序)
@@ -29,6 +51,8 @@ npm run dev
 yarn dev
 ```
 
+注: 因当我们删除文件后, wepy不会删除掉之前编译的已删除文件, 因此每次项目启动前均会清除一次编译文件后, 再重新进行编译
+
 ## 项目打包
 
 ```
@@ -36,6 +60,8 @@ npm run build
 // 或者
 yarn build
 ```
+
+注: 目前打包结果将输出于`dist_release`文件夹
 
 ## 项目启动(h5)
 
@@ -77,6 +103,16 @@ customFileTypes:
 5. 在选择要与 .wpy 关联的语言模式 中选择 Vue。
 
 6. 对于页面中不识别的其他文件, 如`.wxml`后缀文件, 我们将页面自动识别的`纯文本`, 改为`vue-html`即可实现代码高亮
+
+### 微信开发者工具设置
+
+1. 打开项目
+
+2. 点击右上角详情按钮
+
+3. 关闭`ES6转ES5``上传代码时自动补全``上传代码时自动压缩`功能
+
+4. 开启`不校验合法域名`功能(小程序正式环境请求接口必须使用https)
 
 ### 代码规范
 
