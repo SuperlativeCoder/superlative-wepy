@@ -32,10 +32,9 @@ export default handleActions({
     };
   },
   [success(TEST)] (state, action) {
-    console.log(state, action, '11111')
     return {
       ...state,
-      asyncNum: state.asyncNum + action.payload,
+      asyncNum: state.asyncNum,
       testData: action.payload,
     }
   }

@@ -1,4 +1,4 @@
-export const INCREMENT = 'INCREMENT';
-export const DECREMENT = 'DECREMENT';
-export const ASYNC_INCREMENT = 'ASYNC_INCREMENT';
-export const TEST = 'TEST';
+export const INCREMENT = 'COUNTER/INCREMENT';
+export const DECREMENT = 'COUNTER/DECREMENT';
+export const ASYNC_INCREMENT = 'COUNTER/ASYNC_INCREMENT';
+export const TEST = 'COUNTER/TEST';

@@ -1,14 +1,12 @@
 import wepy from 'wepy';
-
 import { connect } from 'wepy-redux';
-import Panel from '@/components/panel';
-import { INCREMENT } from '../../constants/counter';
+
+import Panel from './components/Panel/index';
+import List from './components/List/index';
+import Counter from './components/Counter/index';
+import { INCREMENT, DECREMENT } from '../../constants/counter';
 import { requestTest } from '../../actions';
-// @connect({
-//   num (state) {
-//     return state.counter.num,
-//   }
-// })
+
 @connect({
   num (state) {
     console.log(state, 'state');
@@ -16,14 +14,13 @@ import { requestTest } from '../../actions';
   },
 }, {
   incNum() {
-    console.log(arguments, 'arguments')
     return {
       type: INCREMENT,
-      // 修正一般情况下的参数 一般支持只传一个参数
-      // 如果真的是多个参数的话 那么 payload 就是参数组成的数组
-      payload: 3
+      payload: 3,
     };
   },
+  // 允许直接写的写法, payload默认为undefined
+  decNum: DECREMENT,
   requestTest,
 
 })
@@ -32,9 +29,13 @@ export default class Index extends wepy.page {
   }
   components = {
     panel: Panel,
+    counter1: Counter,
+    counter2: Counter,
+    list: List,
   }
 
   data = {
+    testData: '测试文本内容',
   }
 
   computed = {
@@ -42,18 +43,28 @@ export default class Index extends wepy.page {
 
   methods = {
     onAddNumClick() {
-      // console.log(1, '111', this.num++)
-      this.num = this.num + 1;
-      this.$apply();
+      this.methods.incNum();
+      this.methods.decNum();
+      // 父向子传递事件
+      this.$broadcast('some-event', 1, 2, 3);
+      // 调用子组件的事件, 但不能直接调用events中的事件
+      this.$invoke('counter1', 'plus', 1, 2, 3);
+
+      this.testData = '我又变了';
     },
-    toIndexPage() {
-      wepy.navigateTo({
-        url: '/pages/index/index',
-      });
-    },
+    // toIndexPage() {
+    //   wepy.navigateTo({
+    //     url: '/pages/index/index',
+    //   });
+    // },
   }
 
   events = {
+    'some-event': (...args) => {
+      // 最后一个参数默认为该event对象
+      const $event = args.pop();
+      console.log(`${this.$name} receive ${$event.name} from ${$event.source.$name}`, this, args);
+    },
   }
 
   onLoad() {
@@ -65,10 +76,10 @@ export default class Index extends wepy.page {
   }
   onShow() {
     // Do so  mething when page show.
-    console.log('onShow111');
-    console.log(this.incNum, 'incNum', this.methods.incNum());
-
+    console.log('onShow');
+    this.methods.incNum();
     this.methods.requestTest();
+    this.testData = '我变了';
   }
   onHide() {
     // Do something when page hide.

@@ -11,5 +11,13 @@
   </panel>
   <view class="num-title">{{num}}</view>
   <button @tap="incNum">点我➕</button>
-  <button @tap="toIndexPage">点我去主页</button>
+  <button @tap="decNum">点我➖</button>
+  <button @tap="onAddNumClick">加</button>
+  <view>
+    <counter1></counter1>
+    <counter2></counter2>
+  </view>
+  <list></list>
+  <view>{{testData}}<view>
+  
 </view>

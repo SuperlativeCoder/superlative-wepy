@@ -4,15 +4,14 @@
   "description": "A WePY project",
   "main": "dist/app.js",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development wepy build --watch",
+    "dev": "npm run clean & cross-env NODE_ENV=development wepy build --watch",
     "build": "cross-env NODE_ENV=production wepy build --no-cache",
     "dev:web": "wepy build --output web",
     "clean": "find ./dist -maxdepth 1 -not -name 'project.config.json' -not -name 'dist' | xargs rm -rf",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "wepy": {
-    "module-a": false,
-    "./src/components/list": "./src/components/wepy-list.wpy"
+    "module-a": false
   },
   "author": "ChangerHe <244737162@qq.com>",
   "license": "MIT",

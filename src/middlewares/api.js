@@ -1,4 +1,4 @@
-import { STATUS_REQUEST, STATUS_SUCCESS, STATUS_FAILURE } from '../constants/actionTypes';
+import { STATUS_REQUEST, STATUS_SUCCESS, STATUS_FAILURE } from '../constants';
 import { CALL_API } from '../constants/symbols';
 
 export default (store) => (next) => (action) => {

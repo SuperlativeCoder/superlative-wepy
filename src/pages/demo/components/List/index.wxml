@@ -1,0 +1,10 @@
+<view class="list">
+<view>
+  <button @tap="add" size="mini">添加列表1111</button>
+</view>
+  <block wx:for-items="{{list}}" wx:for-index="index" wx:for-item="item" wx:key="id">
+    <view @tap="tap" class="mylist">
+      <text>{{item.id}}</text>: {{item.title}}
+    </view>
+  </block>
+</view>
