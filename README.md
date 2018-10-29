@@ -110,7 +110,7 @@ customFileTypes:
 
 2. 点击右上角详情按钮
 
-3. 关闭`ES6转ES5``上传代码时自动补全``上传代码时自动压缩`功能
+3. 关闭`ES6转ES5` `上传代码时自动补全` `上传代码时自动压缩`功能
 
 4. 开启`不校验合法域名`功能(小程序正式环境请求接口必须使用https)
 
@@ -128,3 +128,12 @@ customFileTypes:
 - 原`capture-bind:tap="click"`替换为`@tap.capture="click"`，原`capture-catch:tap="click"`替换为`@tap.capture.stop="click"`。
 - 事件传参使用优化后语法代替。 原`bindtap="click" data-index={{index}}`替换为`@tap="click({{index}})"`。
 - 自定义组件命名应避开微信原生组件名称以及功能标签`<repeat>`。 不可以使用`input`、`button`、`view`、`repeat`等微信小程序原生组件名称命名自定义组件；另外也不要使用`WePY`框架定义的辅助标签`repeat`命名。
+
+5. 具体语法规则, 详见![wepy官方文档](https://tencent.github.io/wepy/document.html#/)
+
+## Things Todo
+
+1. 优化wepy打包, 开发环境的依赖包避免打包进正式环境
+2. sass全局注入变量参数, 省去每个页面引入的步骤
+3. 增加Navbar组件, 替代之前的导航条
+4. 
