@@ -36,10 +36,10 @@ export default class Index extends wepy.page {
     list: List,
     'navigation-bar': NavigationBar,
   }
-  mixins = [navigationBarMixin]
   data = {
     testData: '测试文本内容',
     navigationBarTitle: '11111',
+    isNavigationBarNeedBack: false,
   }
 
   computed = {
@@ -72,7 +72,7 @@ export default class Index extends wepy.page {
   }
 
   onLoad() {
-    console.log('onLoad', this);
+    console.log('onLoad', this, this.isNavigationBarNeedBack, this.data.isNavigationBarNeedBack);
   }
   onReady() {
     // Do something when page ready.

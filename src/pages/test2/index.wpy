@@ -1,10 +1,13 @@
 <script>
 import wepy from 'wepy';
 import NavigationBar from 'components/NavigationBar/index';
+// import navigationBarMixin from '../../mixins/navigationBar';
 
 export default class Index extends wepy.page {
   components = {
     'navigation-bar': NavigationBar,
+  }
+  methods={
   }
 }
 </script>
@@ -16,7 +19,16 @@ export default class Index extends wepy.page {
 </style>
 <template>
   <view class="test1">
-    <navigation-bar></navigation-bar>
-    <view>i am test1</view>
+    <navigation-bar 
+      :title="navigationBarTitle" 
+      :back="isNavigationBarNeedBack" 
+      :fixed="isNavigationBarFixed"
+      :background="navigationBarBackground"
+      :fontSize="navigationBarFontSize"
+      :color="navigationBarColor"
+      :placeholderBg="navigationPlaceholderBg"
+      :handleNavigateBack="handleNavigateBack"
+    ></navigation-bar>
+    <view>i am test2</view>
   </view>
 </template>

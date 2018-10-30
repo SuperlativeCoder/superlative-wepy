@@ -7,7 +7,6 @@ export default class Index extends wepy.page {
     'navigation-bar': NavigationBar,
   }
   data = {
-    isFix: 'false'
   }
   methods = {
     toTestPage() {
@@ -26,7 +25,7 @@ export default class Index extends wepy.page {
 </style>
 <template>
   <view class="test1">
-    <navigation-bar id="navigationBar" placeholderBg="" color="#ccc" title="test1" :back="isFix" background="#fff" fixed="{{isFix}}"></navigation-bar>
+    <navigation-bar></navigation-bar>
     <view>i am test1</view>
     <button @tap="toTestPage" style="height:200vh;">去测试2</button>
   </view>

@@ -1,12 +1,13 @@
 <view class="container">
   <navigation-bar 
-    :title="navigationBarTitle" 
-    :back="isNavigationBarNeedBack" 
-    :fixed="isNavigationBarFixed"
-    :background="navigationBarBackground"
-    :fontSize="navigationBarFontSize"
-    :color="navigationBarColor"
-    :placeholderBg="navigationPlaceholderBg"
+    :navigationBarTitle="navigationBarTitle" 
+    :isNavigationBarNeedBack="isNavigationBarNeedBack" 
+    :isNavigationBarFixed="isNavigationBarFixed"
+    :navigationBarBackground="navigationBarBackground"
+    :navigationBarFontSize="navigationBarFontSize"
+    :navigationBarColor="navigationBarColor"
+    :navigationPlaceholderBg="navigationPlaceholderBg"
+    :handleNavigateBack="handleNavigateBack"
   ></navigation-bar>
   <view>123123</view>
   <view>123123</view>

@@ -8,12 +8,12 @@ const IOS_NAVBAR_HEIGHT = 44;
 export default class NavigationNavBar extends wepy.component {
   props = {
     // 是否显示返回
-    back: {
+    isNavigationBarNeedBack: {
       type: Boolean,
-      default: false,
+      default: true,
     },
     // 导航栏背景色
-    background: {
+    navigationBarBackground: {
       type: String,
       default: '#ffffff',
     },
@@ -23,39 +23,37 @@ export default class NavigationNavBar extends wepy.component {
       default: 'transparent',
     },
     // 导航栏字体色
-    color: {
+    navigationBarColor: {
       type: String,
       default: '#000000',
     },
     // 导航栏字大小
-    fontSize: {
+    navigationBarFontSize: {
       type: String,
       default: '40rpx',
     },
     // 导航栏标题
-    title: {
+    navigationBarTitle: {
       type: String,
-      default: 'none',
+      default: '',
     },
     // 导航栏是否fixed定位
-    fixed: {
+    isNavigationBarFixed: {
       type: Boolean,
       default: true,
     },
   }
   data = {
-    height: 44,
-    paddingTop: 20,
+    height: isIOS ? IOS_NAVBAR_HEIGHT : ANDROID_NAVHAR_HEIGHT,
+    paddingTop: statusBarHeight,
     showHomeButton: false,
-    show: true,
   }
   onLoad() {
     const pages = getCurrentPages();
     if (pages.length < 2 && pages[0].route !== __wxConfig.pages[0]) {
       this.showHomeButton = true;
     }
-    this.height = isIOS ? IOS_NAVBAR_HEIGHT : ANDROID_NAVHAR_HEIGHT;
-    this.paddingTop = statusBarHeight;
+    this.$apply();
   }
   events = {}
 
@@ -75,7 +73,7 @@ export default class NavigationNavBar extends wepy.component {
         url: `/${__wxConfig.pages[0]}`,
       });
     },
-    toggleShow() {
+    toggleNavigateShow() {
       this.show = !this.show;
     },
   }
