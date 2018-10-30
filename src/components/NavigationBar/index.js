@@ -49,6 +49,11 @@ export default class NavigationNavBar extends wepy.component {
     showHomeButton: false,
     isNavigateBarShow: true,
   }
+  computed = {
+    totalHeight() {
+      return `-${this.height + this.paddingTop}px`;
+    },
+  }
   onLoad() {
     const pages = getCurrentPages();
     if (pages.length < 2 && pages[0].route !== __wxConfig.pages[0]) {
