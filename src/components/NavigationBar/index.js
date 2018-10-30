@@ -65,6 +65,7 @@ export default class NavigationNavBar extends wepy.component {
 
   methods = {
     handleNavigate(param) {
+      const that = this;
       if (!param) {
         this.methods.navigateBack();
       } else if (param && param.type === 1) {
@@ -75,7 +76,7 @@ export default class NavigationNavBar extends wepy.component {
           content: param.content,
           success(res) {
             if (res.confirm) {
-              this.methods.navigateBack();
+              that.methods.navigateBack();
             }
           },
         });
