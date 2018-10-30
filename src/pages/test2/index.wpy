@@ -8,6 +8,13 @@ export default class Index extends wepy.page {
     'navigation-bar': NavigationBar,
   }
   methods={
+    invokeNavigate() {
+      this.$invoke('navigation-bar', 'handleNavigate', {
+        type: 2,
+        title: '1111111',
+        content: '2222222',
+      });
+    },
   }
 }
 </script>
@@ -29,5 +36,6 @@ export default class Index extends wepy.page {
       :navigationPlaceholderBg="navigationPlaceholderBg"
     ></navigation-bar>
     <view>i am test2</view>
+    <button @tap="invokeNavigate">调用导航</button>
   </view>
 </template>

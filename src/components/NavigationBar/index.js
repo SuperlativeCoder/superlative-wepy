@@ -15,12 +15,12 @@ export default class NavigationNavBar extends wepy.component {
     // 导航栏背景色
     navigationBarBackground: {
       type: String,
-      default: '#ffffff',
+      default: '#fff',
     },
     // 导航栏占位栏背景色
     placeholderBg: {
       type: String,
-      default: 'transparent',
+      default: '#fff',
     },
     // 导航栏字体色
     navigationBarColor: {
@@ -64,6 +64,28 @@ export default class NavigationNavBar extends wepy.component {
   events = {}
 
   methods = {
+    handleNavigate(param) {
+      if (!param) {
+        this.methods.navigateBack();
+      } else if (param && param.type === 1) {
+        this.methods.navigateBackHome();
+      } else if (param && param.type === 2 && param.content) {
+        wx.showModal({
+          title: param.title || '',
+          content: param.content,
+          success(res) {
+            if (res.confirm) {
+              this.methods.navigateBack();
+            }
+          },
+        });
+      } else {
+        wx.showToast({
+          title: 'param error',
+          icon: 'loading',
+        });
+      }
+    },
     navigateBack() {
       const pages = getCurrentPages();
       if (pages.length < 2 && pages[0].route !== __wxConfig.pages[0]) {

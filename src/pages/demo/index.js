@@ -63,7 +63,7 @@ export default class Index extends wepy.page {
     },
     toggleNavigationBar() {
       this.$invoke('navigation-bar', 'toggleNavigateShow', 1, 2, 3);
-    }
+    },
   }
 
   events = {
