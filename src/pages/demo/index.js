@@ -2,11 +2,13 @@ import wepy from 'wepy';
 import { connect } from 'wepy-redux';
 
 import NavigationBar from 'components/NavigationBar/index';
+import navigationBarMixin from '../../mixins/navigationBar';
 import Panel from './components/Panel/index';
 import List from './components/List/index';
 import Counter from './components/Counter/index';
 import { INCREMENT, DECREMENT } from '../../constants/counter';
 import { requestTest } from '../../actions';
+import { isIphonex, isIOS, isAndroid } from '../../utils/platform';
 
 @connect({
   num (state) {
@@ -34,9 +36,10 @@ export default class Index extends wepy.page {
     list: List,
     'navigation-bar': NavigationBar,
   }
-
+  mixins = [navigationBarMixin]
   data = {
     testData: '测试文本内容',
+    navigationBarTitle: '11111',
   }
 
   computed = {
@@ -53,11 +56,11 @@ export default class Index extends wepy.page {
 
       this.testData = '我又变了';
     },
-    // toIndexPage() {
-    //   wepy.navigateTo({
-    //     url: '/pages/index/index',
-    //   });
-    // },
+    toTestPage() {
+      wepy.navigateTo({
+        url: '/pages/test1/index',
+      });
+    },
   }
 
   events = {
@@ -69,7 +72,7 @@ export default class Index extends wepy.page {
   }
 
   onLoad() {
-    console.log('onLoad');
+    console.log('onLoad', this);
   }
   onReady() {
     // Do something when page ready.
@@ -77,7 +80,7 @@ export default class Index extends wepy.page {
   }
   onShow() {
     // Do so  mething when page show.
-    console.log('onShow');
+    console.log('onShow', isIphonex, isIOS, isAndroid);
     this.methods.incNum();
     this.methods.requestTest();
     this.testData = '我变了';

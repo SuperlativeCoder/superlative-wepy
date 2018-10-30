@@ -1,0 +1,22 @@
+<script>
+import wepy from 'wepy';
+import NavigationBar from 'components/NavigationBar/index';
+
+export default class Index extends wepy.page {
+  components = {
+    'navigation-bar': NavigationBar,
+  }
+}
+</script>
+
+<style lang="scss">
+  .test1 {
+    width: 100%;
+  }
+</style>
+<template>
+  <view class="test1">
+    <navigation-bar></navigation-bar>
+    <view>i am test1</view>
+  </view>
+</template>

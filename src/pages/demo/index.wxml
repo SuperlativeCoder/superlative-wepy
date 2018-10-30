@@ -1,5 +1,13 @@
 <view class="container">
-  <navigation-bar></navigation-bar>
+  <navigation-bar 
+    :title="navigationBarTitle" 
+    :back="isNavigationBarNeedBack" 
+    :fixed="isNavigationBarFixed"
+    :background="navigationBarBackground"
+    :fontSize="navigationBarFontSize"
+    :color="navigationBarColor"
+    :placeholderBg="navigationPlaceholderBg"
+  ></navigation-bar>
   <view>123123</view>
   <view>123123</view>
   <view>123123</view>
@@ -14,6 +22,7 @@
   <button @tap="incNum">点我➕</button>
   <button @tap="decNum">点我➖</button>
   <button @tap="onAddNumClick">加</button>
+  <button @tap="toTestPage">去测试页</button>
   <view>
     <counter1></counter1>
     <counter2></counter2>

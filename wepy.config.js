@@ -21,6 +21,7 @@ module.exports = {
       reducers: path.join(__dirname, 'src/reducers'),
       imgs: path.join(__dirname, 'src/public/images'),
       components: path.join(__dirname, 'src/components'),
+      mixins: path.join(__dirname, 'src/mixins'),
     },
     aliasFields: ['wepy', 'weapp'],
     modules: ['node_modules'],

@@ -9,6 +9,8 @@ module.exports = {
     "__ENV__": false,
     "wx": false,
     "wepy": false,
+    "__wxConfig": false,
+    "getCurrentPages": false,
   },
   env: {
     browser: true
