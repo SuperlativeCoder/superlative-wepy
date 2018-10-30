@@ -10,7 +10,7 @@ export default class Index extends wepy.page {
   methods={
     invokeNavigate() {
       this.$invoke('navigation-bar', 'handleNavigate', {
-        type: 2,
+        navigateBackType: 3,
         title: '1111111',
         content: '2222222',
       });

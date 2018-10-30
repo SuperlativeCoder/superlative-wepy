@@ -7,6 +7,9 @@ export default class Index extends wepy.page {
     'navigation-bar': NavigationBar,
   }
   data = {
+    navigateBackType: 3,
+    navigateBackModalTitle: '测试标题',
+    navigateBackModalContent: '我是一大段大段大段大段大段大段大段大段大段大段大段测试文本内容?'
   }
   methods = {
     toTestPage() {
@@ -25,7 +28,11 @@ export default class Index extends wepy.page {
 </style>
 <template>
   <view class="test1">
-    <navigation-bar></navigation-bar>
+    <navigation-bar
+      :navigateBackType="navigateBackType"
+      :navigateBackModalTitle="navigateBackModalTitle"
+      :navigateBackModalContent="navigateBackModalContent"
+    ></navigation-bar>
     <view>i am test1</view>
     <button @tap="toTestPage" style="height:200vh;">去测试2</button>
   </view>
