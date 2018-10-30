@@ -5,4 +5,4 @@
 	</view>
 	<view class="title">{{navigationBarTitle}}</view>
 </view>
-<view class="navigation-bar-holder" wx:if="{{isNavigationBarFixed && isNavigateBarShow}}" style="background:{{placeholderBg}};padding-top:{{paddingTop}}px;height:{{height}}px;line-height:{{height}}px;width:750rpx;"></view>
+<view class="navigation-bar-holder" style="background:{{placeholderBg}};padding-top:{{paddingTop}}px;height:{{isNavigationBarFixed && isNavigateBarShow ? height : 0}}px;line-height:{{height}}px;width:750rpx;"></view>

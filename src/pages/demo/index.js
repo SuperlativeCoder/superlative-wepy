@@ -2,7 +2,7 @@ import wepy from 'wepy';
 import { connect } from 'wepy-redux';
 
 import NavigationBar from 'components/NavigationBar/index';
-import navigationBarMixin from '../../mixins/navigationBar';
+// import navigationBarMixin from '../../mixins/navigationBar';
 import Panel from './components/Panel/index';
 import List from './components/List/index';
 import Counter from './components/Counter/index';
@@ -61,6 +61,9 @@ export default class Index extends wepy.page {
         url: '/pages/test1/index',
       });
     },
+    toggleNavigationBar() {
+      this.$invoke('navigation-bar', 'toggleNavigateShow', 1, 2, 3);
+    }
   }
 
   events = {

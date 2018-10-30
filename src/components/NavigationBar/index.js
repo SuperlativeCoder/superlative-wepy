@@ -47,6 +47,7 @@ export default class NavigationNavBar extends wepy.component {
     height: isIOS ? IOS_NAVBAR_HEIGHT : ANDROID_NAVHAR_HEIGHT,
     paddingTop: statusBarHeight,
     showHomeButton: false,
+    isNavigateBarShow: true,
   }
   onLoad() {
     const pages = getCurrentPages();
@@ -74,7 +75,7 @@ export default class NavigationNavBar extends wepy.component {
       });
     },
     toggleNavigateShow() {
-      this.show = !this.show;
+      this.isNavigateBarShow = !this.isNavigateBarShow;
     },
   }
 }
