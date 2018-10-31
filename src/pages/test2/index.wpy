@@ -7,6 +7,9 @@ export default class Index extends wepy.page {
   components = {
     'navigation-bar': NavigationBar,
   }
+  data = {
+    navigationBarTitle: 'test title',
+  }
   methods={
     invokeNavigate() {
       this.$invoke('navigation-bar', 'handleNavigate', {
@@ -28,12 +31,6 @@ export default class Index extends wepy.page {
   <view class="test1">
     <navigation-bar 
       :navigationBarTitle="navigationBarTitle" 
-      :isNavigationBarNeedBack="isNavigationBarNeedBack" 
-      :isNavigationBarFixed="isNavigationBarFixed"
-      :navigationBarBackground="navigationBarBackground"
-      :navigationBarFontSize="navigationBarFontSize"
-      :navigationBarColor="navigationBarColor"
-      :navigationPlaceholderBg="navigationPlaceholderBg"
     ></navigation-bar>
     <view>i am test2</view>
     <button @tap="invokeNavigate">调用导航</button>

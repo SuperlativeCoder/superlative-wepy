@@ -42,17 +42,9 @@ export default class NavigationNavBar extends wepy.component {
       type: Boolean,
       default: true,
     },
-    navigateBackType: {
-      type: Number,
-      default: 1,
-    },
-    navigateBackModalTitle: {
-      type: String,
-      default: '',
-    },
-    navigateBackModalContent: {
-      type: String,
-      default: '确定要返回吗?',
+    navigateParam: {
+      type: Object,
+      default: null,
     },
   }
   data = {
@@ -76,11 +68,11 @@ export default class NavigationNavBar extends wepy.component {
   events = {}
 
   methods = {
-    handleNavigate(param) {
+    handleNavigate(invokeParam) {
       const that = this;
-      if (!param.navigateBackType && this.navigateBackType === 1) {
-        this.methods.navigateBack();
-      } else if ((param && param.navigateBackType === 2) || this.navigateBackType === 2) {
+      const param = this.navigateParam ? this.navigateParam : invokeParam;
+
+      if (param && param.navigateBackType === 2) {
         this.methods.navigateBackHome();
       } else if (param && param.navigateBackType === 3 && param.content) {
         wx.showModal({
@@ -92,21 +84,8 @@ export default class NavigationNavBar extends wepy.component {
             }
           },
         });
-      } else if (this.navigateBackType === 3 && this.navigateBackModalContent) {
-        wx.showModal({
-          title: this.navigateBackModalTitle,
-          content: this.navigateBackModalContent,
-          success(res) {
-            if (res.confirm) {
-              that.methods.navigateBack();
-            }
-          },
-        });
       } else {
-        wx.showToast({
-          title: 'param error',
-          icon: 'loading',
-        });
+        this.methods.navigateBack();
       }
     },
     navigateBack() {
