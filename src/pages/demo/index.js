@@ -1,7 +1,6 @@
 import wepy from 'wepy';
 import { connect } from 'wepy-redux';
 
-import Toast from 'wepy-com-toast';
 import NavigationBar from 'components/NavigationBar/index';
 import testMixin from '../../mixins/test';
 import Panel from './components/Panel/index';
@@ -36,7 +35,6 @@ export default class Index extends wepy.page {
     counter2: Counter,
     list: List,
     'navigation-bar': NavigationBar,
-    toast: Toast,
   }
   data = {
     testData: '测试文本内容',
@@ -65,12 +63,6 @@ export default class Index extends wepy.page {
     },
     toggleNavigationBar() {
       this.$invoke('navigation-bar', 'toggleNavigateShow', 1, 2, 3);
-    },
-    showToast() {
-      this.$invoke('toast', 'show', {
-        title: '自定义标题',
-        img: 'https://raw.githubusercontent.com/kiinlam/wetoast/master/images/star.png',
-      });
     },
     showBasicToast() {
       wx.showToast({

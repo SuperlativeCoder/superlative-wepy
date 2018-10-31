@@ -20,7 +20,6 @@
   <button @tap="onAddNumClick">加</button>
   <button @tap="toTestPage">去测试页</button>
   <button @tap="toggleNavigationBar">切换导航条显隐</button>
-  <button @tap="showToast">显示toast</button>
   <button @tap="showBasicToast">显示自带toast</button>
   <view>
     <counter1></counter1>
