@@ -135,5 +135,58 @@ customFileTypes:
 
 - [ ] 1. 优化wepy打包, 开发环境的依赖包避免打包进正式环境
 - [ ] 2. sass全局注入变量参数, 省去每个页面引入的步骤
-- [X] 3. 增加Navbar组件, 替代之前的小程序默认导航条
+- [X] 3. 增加NavigationBar组件, 替代之前的小程序默认导航条
 - [ ] 4. 项目工程增加处理多个小程序打包的支持(多入口打包)
+
+## 组件使用概述
+
+### 导航组件 NavigationBar
+
+组件用于页面的导航功能, 替代掉原来的页面导航组件
+
+主要用于实现更加精细化的导航控制, 处理一些之前无法完成的交互效果, 如
+
+1. 点击页面导航按钮, 弹出modal后, 点击确定才返回上一层
+2. 用户通过扫码直接进入内页, 没有直观的提示来方便用户返回到主页
+
+#### 组件用法
+
+1. 在页面组件中引入该组件, 并在`components`中声明
+
+```
+import NavigationBar from 'components/NavigationBar/index';
+// ...
+components = {
+  // ....
+  'navigation-bar': NavigationBar,
+}
+```
+
+2. 在页面结构中使用这个组件
+
+```
+<navigation-bar 
+  :navigationBarTitle="navigationBarTitle" 
+  :isNavigationBarNeedBack="isNavigationBarNeedBack" 
+  :isNavigationBarFixed="isNavigationBarFixed"
+  :navigationBarBackground="navigationBarBackground"
+  :navigationBarFontSize="navigationBarFontSize"
+  :navigationBarColor="navigationBarColor"
+  :navigationPlaceholderBg="navigationPlaceholderBg"
+  :navigateParam="navigateParam"
+></navigation-bar>
+```
+
+上面列明了所有支持的参数, 但是以上的所有参数均为可选项, 需要时可以自行传入来操作控制
+
+#### 参数定义
+
+- navigationBarTitle: 页面导航条标题
+- isNavigationBarNeedBack: 是否显示返回按钮(主页默认不显示, 非主页默认显示, 扫码进入内页默认显示, 并在旁边显示首页两个字)
+- isNavigationBarFixed: 导航条是否固定于顶部, 为false时将跟随页面滑动
+- navigationBarBackground: 导航条背景色
+- navigationBarFontSize: 导航条字体大小
+- navigationBarColor: 导航条字体颜色(修改此选项将同步影响返回按钮)
+- navigationPlaceholderBg: 导航条的占位块背景色(一般建议与主体背景相同, 否则容易出现ios上下拉出现其他颜色的情况)
+- navigateParam: 跳转参数, 用于控制点击跳转时的行为(可用参数: navigateBackType导航返回的类型(1:正常返回,默认 2:返回到主页 3:弹框确认后返回) title:确认弹框标题(navigateBackType为3时有效) content:确认弹框内容(navigateBackType为3时有效) )
+
