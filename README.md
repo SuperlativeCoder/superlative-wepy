@@ -181,12 +181,14 @@ components = {
 
 #### 参数定义
 
-- navigationBarTitle: 页面导航条标题
-- isNavigationBarNeedBack: 是否显示返回按钮(主页默认不显示, 非主页默认显示, 扫码进入内页默认显示, 并在旁边显示首页两个字)
-- isNavigationBarFixed: 导航条是否固定于顶部, 为false时将跟随页面滑动
-- navigationBarBackground: 导航条背景色
-- navigationBarFontSize: 导航条字体大小
-- navigationBarColor: 导航条字体颜色(修改此选项将同步影响返回按钮)
-- navigationPlaceholderBg: 导航条的占位块背景色(一般建议与主体背景相同, 否则容易出现ios上下拉出现其他颜色的情况)
-- navigateParam: 跳转参数, 用于控制点击跳转时的行为(可用参数: navigateBackType导航返回的类型(1:正常返回,默认 2:返回到主页 3:弹框确认后返回) title:确认弹框标题(navigateBackType为3时有效) content:确认弹框内容(navigateBackType为3时有效) )
+|参数名称|参数定义|
+|:-:|:-:|
+|navigationBarTitle|页面导航条标题|
+|isNavigationBarNeedBack|是否显示返回按钮(主页默认不显示, 非主页默认显示, 扫码进入内页默认显示, 并在旁边显示首页两个字)|
+|isNavigationBarFixed|导航条是否固定于顶部, 为false时将跟随页面滑动|
+|navigationBarBackground|导航条背景色|
+|navigationBarFontSize|导航条字体大小|
+|navigationBarColor|导航条字体颜色(修改此选项将同步影响返回按钮)|
+|navigationPlaceholderBg|导航条的占位块背景色(一般建议与主体背景相同, 否则容易出现ios上下拉出现其他颜色的情况)|
+|navigateParam|跳转参数, 用于控制点击跳转时的行为(可用参数: navigateBackType:1/2/3,title,content)|
 
