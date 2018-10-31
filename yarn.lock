@@ -4500,10 +4500,6 @@ wepy-async-function@^1.4.4:
     promise-polyfill "^6.0.2"
     regenerator-runtime "^0.10.3"
 
-wepy-com-toast@^1.0.2:
-  version "1.0.2"
-  resolved "http://10.0.58.159:4873/wepy-com-toast/-/wepy-com-toast-1.0.2.tgz#6f49cd67192bdadedac5f8c36f990bddc2f107f9"
-
 wepy-compiler-babel@^1.5.1:
   version "1.5.3"
   resolved "http://10.0.58.159:4873/wepy-compiler-babel/-/wepy-compiler-babel-1.5.3.tgz#345343dbfcf7f34d2ac8b49f450faed6bdd0ea3c"
