@@ -5,6 +5,6 @@
 		</view>
 		<view class="back-home" wx:if="{{showHomeButton}}" style="">首页</view>
 	</view>
-	<view class="title">{{navigationBarTitle}}</view>
+	<view class="title" style="font-weight:{{fontWeight}}">{{navigationBarTitle}}</view>
 </view>
 <view class="navigation-bar-holder" style="background:{{placeholderBg}};padding-top:{{paddingTop}}px;height:{{isNavigationBarFixed && isNavigateBarShow ? height : 0}}px;line-height:{{height}}px;width:100%;"></view>

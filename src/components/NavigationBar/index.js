@@ -52,6 +52,7 @@ export default class NavigationNavBar extends wepy.component {
     paddingTop: statusBarHeight,
     showHomeButton: false,
     isNavigateBarShow: true,
+    fontWeight: isIOS ? 'bold' : 'normal',
   }
   computed = {
     totalHeight() {
