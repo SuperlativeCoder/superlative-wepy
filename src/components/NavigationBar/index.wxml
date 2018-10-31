@@ -1,6 +1,8 @@
 <view class="navigation-bar" style="padding-top:{{paddingTop}}px;height:{{height}}px;line-height:{{height}}px;background:{{navigationBarBackground}};color:{{navigationBarColor}};font-size:{{navigationBarFontSize}};position:{{isNavigationBarFixed && 'fixed'}};transform:translateY({{isNavigateBarShow?'0':totalHeight}});">
 	<view class="back" wx:if="{{isNavigationBarNeedBack}}" style="padding-top:{{paddingTop}}px;height:{{height}}px;line-height:{{height}}px;" bind:tap="handleNavigate">
-		<view class="icon-fanhui"></view>
+		<view class="icon-back">
+			<image src="../../public/images/icon-back.svg"></image>
+		</view>
 		<view class="back-home" wx:if="{{showHomeButton}}" style="">首页</view>
 	</view>
 	<view class="title">{{navigationBarTitle}}</view>

@@ -140,7 +140,7 @@ customFileTypes:
 
 ## 组件使用概述
 
-### 导航组件 NavigationBar
+### 1. 导航组件 NavigationBar
 
 组件用于页面的导航功能, 替代掉原来的页面导航组件
 
