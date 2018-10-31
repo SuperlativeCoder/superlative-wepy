@@ -3,7 +3,7 @@ import { connect } from 'wepy-redux';
 
 import Toast from 'wepy-com-toast';
 import NavigationBar from 'components/NavigationBar/index';
-// import navigationBarMixin from '../../mixins/navigationBar';
+import testMixin from '../../mixins/test';
 import Panel from './components/Panel/index';
 import List from './components/List/index';
 import Counter from './components/Counter/index';
@@ -43,7 +43,7 @@ export default class Index extends wepy.page {
     navigationBarTitle: 'DEMO',
     isNavigationBarNeedBack: false,
   }
-
+  mixins = [testMixin]
   computed = {
   }
 
@@ -72,6 +72,12 @@ export default class Index extends wepy.page {
         img: 'https://raw.githubusercontent.com/kiinlam/wetoast/master/images/star.png',
       });
     },
+    showBasicToast() {
+      wx.showToast({
+        title: '自定义标题',
+        image: '../../public/images/icon-back.svg',
+      });
+    },
   }
 
   events = {
@@ -83,7 +89,7 @@ export default class Index extends wepy.page {
   }
 
   onLoad() {
-    console.log('onLoad', this, this.isNavigationBarNeedBack, this.data.isNavigationBarNeedBack);
+    console.log('onLoad');
   }
   onReady() {
     // Do something when page ready.

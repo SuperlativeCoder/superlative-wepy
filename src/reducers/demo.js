@@ -1,4 +1,3 @@
-// import actionTypes from '../../constants/actionTypes';
 import { LOADING_STATUS } from '../constants/symbols';
 import {
   INCREMENT,
