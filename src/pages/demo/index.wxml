@@ -8,10 +8,6 @@
     :navigationBarColor="navigationBarColor"
     :navigationPlaceholderBg="navigationPlaceholderBg"
   ></navigation-bar>
-  <view>123123</view>
-  <view>123123</view>
-  <view>123123</view>
-  <view class="title">123123</view>
   <panel>
     <view class="title" slot="title">测试标题</view>
     <view class="test-content">

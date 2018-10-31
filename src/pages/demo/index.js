@@ -7,13 +7,13 @@ import NavigationBar from 'components/NavigationBar/index';
 import Panel from './components/Panel/index';
 import List from './components/List/index';
 import Counter from './components/Counter/index';
-import { INCREMENT, DECREMENT } from '../../constants/counter';
+import { INCREMENT, DECREMENT } from '../../constants/demo';
 import { requestTest } from '../../actions';
 import { isIphonex, isIOS, isAndroid } from '../../utils/platform';
 
 @connect({
   num (state) {
-    return state.counter.num;
+    return state.demo.num;
   },
 }, {
   incNum() {
@@ -40,7 +40,7 @@ export default class Index extends wepy.page {
   }
   data = {
     testData: '测试文本内容',
-    navigationBarTitle: '11111',
+    navigationBarTitle: 'DEMO',
     isNavigationBarNeedBack: false,
   }
 
