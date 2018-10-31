@@ -33,6 +33,6 @@ export default class Index extends wepy.page {
       :navigateParam="navigateParam"
     ></navigation-bar>
     <view>i am test1</view>
-    <button @tap="toTestPage" style="height:200vh;">去测试2</button>
+    <button @tap="toTestPage">去测试2</button>
   </view>
 </template>
